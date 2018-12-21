@@ -216,7 +216,8 @@ body {
 
 .slicknav_menu {
   display: block;
-  background: transparent; }
+  background: transparent;
+  z-index: 1001; }
 
 .slicknav_btn {
   background: transparent; }
