@@ -2,6 +2,7 @@
     $(document).ready(function () {
         let mainArray = [];
         let secondArr = [];
+        let lastLoadedIdFromServer = 0;
         let parseLocal = JSON.parse(localStorage.getItem('localStorageArray'));
             // {
             //     "id": 0,
@@ -83,11 +84,17 @@
             });
         }
         $('#loadMoreTodos').click(function () {
+            let loadFromServerLenght = lastLoadedIdFromServer + 10;
                 $.getJSON('https://jsonplaceholder.typicode.com/todos', function(data) {
                     secondArr = data;
                 });
-            for (let i = 0; i <= 9; i++) {
+            for (let i = lastLoadedIdFromServer; i < loadFromServerLenght; i++) {
                 mainArray.push(secondArr[i]);
+                lastLoadedIdFromServer = secondArr[i].id;
+                if (lastLoadedIdFromServer > 199) {
+                    lastLoadedIdFromServer = 0;
+                }
+                console.log(lastLoadedIdFromServer);
                 pushToLocalStorage();
                 renderArray(todoList);
             }
