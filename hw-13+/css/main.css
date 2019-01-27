@@ -1,0 +1,83 @@
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.main-wrapper {
+
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    margin: 30px auto 0;
+    max-width: 700px;
+}
+#todoList {
+    list-style: none;
+    padding: 0;
+}
+#todoList li {
+    padding: 7px;
+}
+#todoList li:nth-child(odd) {
+    background-color: rgb(246, 246, 246);
+}
+#todoList li:nth-child(even) {
+    background-color: rgb(254, 254, 254);
+}
+#inputText {
+    width: 100%;
+    max-width: 220px;
+    outline: none;
+    padding: 5px 0;
+}
+.rmBtn {
+    padding: 0 5px;
+    height: 30px;
+    width: 30px;
+    float: right;
+    cursor: pointer;
+    background-color: #d6d1c8;
+    border-radius: 2px;
+    outline: none;
+}
+.editBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    height: 30px;
+    text-decoration: none;
+    background-color: rgb(189, 189, 203);
+    border-radius: 2px;
+    float: right;
+    padding: 0 10px;
+    color: #292929;
+    outline: none;
+    transition: 0.3s;
+}
+.todoListCheckboxItem {
+    /*zoom: 1.7;*/
+}
+.editBtn:hover {
+    color: rgb(189, 189, 203);
+    background-color: #292929;
+}
+#modalEditInput {
+    width: 100%;
+    max-width: 500px;
+    min-height: 50px;
+    resize: vertical;
+}
+.todoForm button, input {
+    background-color: #292929;
+    color: aliceblue;
+    padding: 5px 15px;
+}
+@media only screen and (max-width: 450px) {
+    #todoList span {
+        display: block;
+        text-align: center;
+        border: 1px solid #eaeaea;
+        padding: 5px 0;
+    }
+}
