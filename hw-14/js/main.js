@@ -1,19 +1,36 @@
-let firstArray = [
-    {
-        'elem': 0
-    },
-    {
-        'elem': 1
-    },
-    {
-        'elem': 2
-    }
+ let firstArray = [
+        {
+            'elem': 0
+        },
+        {
+            'elem': 1
+        },
+        {
+            'elem': 2
+        }
     ];
-let secondArray = [];
-let thirdArray = [];
-let putHereElement = [];
-let dragStartArray = -1;
-renderView();
+    let secondArray = [];
+    let thirdArray = [];
+    let putHereElement = [];
+    let dragStartArray = -1;
+    document.querySelector('#hanoi-heightOfTower').addEventListener('change', setHeightTower);
+    renderView();
+    function setHeightTower(e) {
+        firstArray = [];
+        secondArray = [];
+        thirdArray = [];
+        if (document.querySelector('#hanoi-heightOfTower').value >2 && document.querySelector('#hanoi-heightOfTower').value<9) {
+            for (let i=0;i<e.target.value;i++)  {
+                firstArray.push({
+                    'elem': i
+                });
+            }
+        }
+        else {
+            document.querySelector('#hanoi-heightOfTower').value = '';
+        }
+        renderView();
+    }
     function renderView() {
         document.getElementById('div1').innerHTML = '';
         document.getElementById('div2').innerHTML = '';
@@ -60,40 +77,39 @@ renderView();
             dragStartArray = startNumber;
         }
     }
-
-function renderArray(array,idOfDiv) {
-    for (let i = 0; i< array.length; i++) {
-        let isdraggable ='false';
-        if (i === array.length - 1) {
-            isdraggable ='true';
-        }
-        document.getElementById(idOfDiv).innerHTML +=(`
+    function renderArray(array,idOfDiv) {
+        for (let i = 0; i< array.length; i++) {
+            let isdraggable ='false';
+            if (i === array.length - 1) {
+                isdraggable ='true';
+            }
+            document.getElementById(idOfDiv).innerHTML +=(`
             <div draggable="`+
-            isdraggable
-            +`" ondragstart="drag(event)" class="draggableDiv" id="drag` +
-            array[i].elem +`">` + `</div>`);
+                isdraggable
+                +`" ondragstart="drag(event)" class="draggableDiv" id="drag` +
+                array[i].elem +`">` + `</div>`);
+        }
     }
-}
-function allowDrop(ev) {
-    ev.preventDefault();
-}
-
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-    checkForDrag('div1',firstArray,ev,0);
-    checkForDrag('div2',secondArray,ev,1);
-    checkForDrag('div3',thirdArray,ev,2);
-}
-
-function drop(ev) {
-    ev.preventDefault();
-    let data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-    checkForDrop('div1',firstArray,ev);
-    checkForDrop('div2',secondArray,ev);
-    checkForDrop('div3',thirdArray,ev);
-    renderView();
-    if (secondArray.length ===3) {
-        alert('Congratulation, you have broken the universe -_-')
+    function allowDrop(ev) {
+        ev.preventDefault();
     }
-}
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+        checkForDrag('div1',firstArray,ev,0);
+        checkForDrag('div2',secondArray,ev,1);
+        checkForDrag('div3',thirdArray,ev,2);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        let data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+        checkForDrop('div1',firstArray,ev);
+        checkForDrop('div2',secondArray,ev);
+        checkForDrop('div3',thirdArray,ev);
+        renderView();
+        if (secondArray.length === parseInt(document.querySelector('#hanoi-heightOfTower').value)) {
+            alert('Congratulation, you have broken the universe -_-')
+        }
+    }

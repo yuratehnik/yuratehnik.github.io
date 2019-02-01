@@ -9,15 +9,22 @@
     <title>ToDo</title>
 </head>
 <body>
-<h2>Hanoi Tower</h2>
+<div class="main-wrapper">
+    <h2>Hanoi Tower</h2>
 
-<p>Move piramide block by block to the center section.</p>
-<p>You can only put smaller block up to the bigger.</p>
-<p>Use drag and drop system to move block.</p>
+    <p>Move piramide block by block to the center section.</p>
+    <p>You can only put smaller block up to the bigger.</p>
+    <p>Use drag and drop system to move block.</p>
+    <p>Set height of tower from 3 to 8</p>
+    <input type="number" id="hanoi-heightOfTower" value="3" min="3" max="8">
 
-<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-<div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div class="hanoi-wrapper">
+        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+</div>
+
 
 
 </body>
