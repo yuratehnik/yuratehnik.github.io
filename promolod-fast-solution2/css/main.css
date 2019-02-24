@@ -1,0 +1,22 @@
+.site-main {
+    column-count: 2;
+}
+.blog-post {
+    break-inside: avoid;
+    margin: 15px;
+}
+.blog-description {
+    width: 100%;
+}
+.blog-post .read-more {
+    border: 2px solid #049fd2;
+    color: #049fd2;
+}
+.blog-post .read-more:hover {
+    background-color: #049fd2;
+    color: white;
+    border: 2px solid #049fd2;
+}
+.blog-title {
+    color: #049fd2;
+}
