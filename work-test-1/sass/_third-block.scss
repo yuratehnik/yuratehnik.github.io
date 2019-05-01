@@ -1,0 +1,87 @@
+.third-block {
+  font-family: $font;
+  text-transform: uppercase;
+  & .container {
+    display: flex;
+    flex-flow: row wrap;
+    overflow: hidden;
+  }
+  &__text{
+    padding: 0 10px;
+  }
+  &__headline {
+    max-width: 350px;
+    color: #636363;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 24px;
+  }
+  &__list {
+    width: 100%;
+    max-width: 440px;
+    padding: 40px 10px;
+    @media only screen and (min-width: 620px) {
+      padding: 100px 10px;
+    }
+    &__item {
+      padding: 12px 0;
+      position: relative;
+      display: flex;
+      &__number {
+        transform: rotate(-90deg);
+        position: absolute;
+        left: 0;
+        color: rgba(99, 99, 99, 0.2);
+        font-size: 18px;
+        font-weight: 800;
+      }
+      &__text{
+        color: #646464;
+        font-size: 14px;
+        font-weight: 800;
+        padding-left: 50px;
+        &::before {
+          content: '';
+          width: 5px;
+          height: 5px;
+          background-color: #ef4444;
+          position: absolute;
+          top: 15px;
+          left: 42px;
+        }
+      }
+    }
+  }
+  &__slider {
+    &__wrapper {
+      width: 100%;
+      max-width: 500px;
+    }
+  }
+}
+.slick-initialized .slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
+.slick-dots {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  & button {
+    border-radius: 100%;
+    padding: 10px;
+    font-size: 0;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      background-color: #bdbdbd;
+    }
+  }
+}
+.slick-active button{
+  transition: 0.3s;
+  background-color: #3a3a3a;
+}

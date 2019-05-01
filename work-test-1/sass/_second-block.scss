@@ -1,0 +1,87 @@
+.second-block {
+  & .container {
+    display: flex;
+    flex-flow: row wrap;
+  }
+    font-family: $font;
+    text-transform: uppercase;
+    &__text {
+      padding: 10px;
+      width: 100%;
+      max-width: 645px;
+        &__headline {
+            font-size: 32px;
+            padding: 15px 0 0;
+            &::before {
+                width: 8px;
+                height: 8px;
+            }
+        }
+        &__headline-info {
+            color: #bfbdbd;
+            font-size: 22px;
+            font-weight: 800;
+        }
+    }
+    &__list {
+      margin: 55px 0;
+      width: 100%;
+      max-width: 470px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      list-style: none;
+      color: #636363;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 14px;
+      &__item {
+        margin: 7px 0;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 200px;
+        display: flex;
+        align-items: center;
+        &__text-wrapper {
+          width: 100%;
+          max-width: 108px;
+        }
+        &__first {
+          margin-left: 10px;
+          max-width: 100%;
+          justify-content: flex-start;
+          & .second-block__list__item__text-wrapper {
+            margin-left: 43px;
+          }
+        }
+      }
+    }
+  &__paragraph {
+    width: 100%;
+    max-width: 550px;
+    color: #3a3a3a;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 16px;
+  }
+  &__image{
+    padding: 30px 10px;
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    @media only screen and (min-width: 620px) {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 70px;
+        left: -70px;
+        top: 0;
+        box-shadow: 0px 0 70px 0 #bdbaba;
+        bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+$font: 'Open Sans', sans-serif;
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1040px;
+}
+section {
+    margin-top: 40px;
+}
+#anim_marker1, #anim_marker2 {
+  opacity: 0;
+  transform: translateY(130px);
+  transition: 1.4s;
+}
+.show_hidden_block {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
