@@ -18,15 +18,20 @@ window.onload = function() {
     }
     getSubmitBtn.addEventListener('click',function(){
         if (getEmailField.value.indexOf('@') > -1) {
-            let ajaxField = 'https://httpbin.org/get?' + getNameField.getAttribute('name') + '=' + getNameField.value +
-                '&' + getEmailField.getAttribute('name') + '=' + getEmailField.value;
-            getAjax(ajaxField, function(data){
-                let json = JSON.parse(data);
-                if (json != '') {
-                    alert('Thank you, we have received your data')
-                } else alert('Error');
-            });   
-        } else alert('Error');
+            $.get(
+                "https://httpbin.org/get",
+                {
+                    name: getNameField.value,
+                    email: getEmailField.value
+                },
+                onAjaxSuccess
+            );
+
+            function onAjaxSuccess(data)
+            {
+                alert('Thank you, we have received your data')
+            }
+        }
     });
     /*----------SLICK SLIDER-----------*/
     $('.third-block__slider').slick({
