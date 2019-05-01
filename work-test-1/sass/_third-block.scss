@@ -5,9 +5,16 @@
     display: flex;
     flex-flow: row wrap;
     overflow: hidden;
+    justify-content: space-around;
+    @media only screen and(min-width: 975px) {
+      justify-content: space-between;
+    }
   }
   &__text{
     padding: 0 10px;
+    @media only screen and(min-width: 420px) {
+      padding: 0 25px;
+    }
   }
   &__headline {
     max-width: 350px;

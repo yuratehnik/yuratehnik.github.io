@@ -9,6 +9,9 @@
       padding: 10px;
       width: 100%;
       max-width: 645px;
+      @media only screen and(min-width: 420px) {
+        padding: 10px 25px;
+      }
         &__headline {
             font-size: 32px;
             padding: 15px 0 0;
