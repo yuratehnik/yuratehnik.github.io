@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+.container {
+    margin: 0 auto;
+    padding: 20px 15px;
+    width: 100%;
+    max-width: 900px;
+    background-color: #fff;
+}
+.secondary-headline {
+    padding-top: 20px;
+    font-family: 'Work Sans', sans-serif;
+}
+a {
+    text-decoration: none;
+    color: #4e4e4e;
+}
+a:hover {
+    text-decoration: underline;
+    color: #212121;
+}
+/*-------------HEADER--------------*/
+.header {
+    color: #4e4e4e;
+}
+.header__image__wrapper {
+    border-radius: 100%;
+    overflow: hidden;
+    width: 100%;
+    max-width: 150px;
+    height: 150px;
+    box-shadow: -5px 5px 20px 0 #000;
+}
+.header__image__wrapper img{
+    height: 100%;
+}
+.header .container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+.header__name {
+    margin: 0;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 800;
+    font-size: 45px;
+}
+.header__role {
+    font-family: 'Acme', sans-serif;
+    font-size: 25px;
+}
+.header__targer {
+    font-family: 'Acme', sans-serif;
+    font-size: 18px;
+}
+/*----------------MAIN CONTENT-------------------*/
+.main-content {
+    display: flex;
+    flex-flow: row wrap-reverse;
+    justify-content: space-between;
+}
+.main__list {
+    padding-left: 10px;
+}
+.main__list__item {
+    display: flex;
+}
+.main__list__date {
+    width: 100%;
+    max-width: 110px;
+    font-family: 'Acme', sans-serif;
+}
+.main__list__description {
+    font-family: sans-serif;
+}
+main .secondary-headline {
+    text-decoration: underline;
+}
+/*-----------------SIDEBAR-----------------------*/
+aside {
+    padding: 0 20px 20px;
+    background-color: #efefef;
+    color: #4e4e4e;
+}
+.aside__info-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.aside__skill-list {
+    list-style: none;
+    padding-left: 15px;
+    margin: 0;
+}
+.aside__skill-list li {
+    position: relative;
+    padding: 3px 0 ;
+}
+.aside__skill-list li:before {
+    position: absolute;
+    top: 19px;
+    left: -2px;
+    content: '';
+    width: 20px;
+    height: 3px;
+    background-color: #bfbfbf;
+}
+.aside__languages-list {
+    list-style: none;
+    padding-left: 15px;
+    margin: 0;
+}
+/*---------------RESPONSIVE-----------------*/
+@media only screen and (min-width: 500px) {
+    .header__info-wrapper {
+        margin-left: 30px;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .main-content {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+    }
+    .header .container {
+        flex-flow: row;
+    }
+    .main__list__description {
+        padding: 0 25px;
+    }
+}
