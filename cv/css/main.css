@@ -82,6 +82,7 @@ main .secondary-headline {
 }
 /*-----------------SIDEBAR-----------------------*/
 aside {
+    width: 100%;
     padding: 0 20px 20px;
     background-color: #efefef;
     color: #4e4e4e;
@@ -130,5 +131,8 @@ aside {
     }
     .main__list__description {
         padding: 0 25px;
+    }
+    aside {
+        width: auto;
     }
 }
