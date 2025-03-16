@@ -145,3 +145,73 @@ function drawChartTask1() {
     var chart = new google.visualization.OrgChart(document.getElementById("task1"))
     chart.draw(data, { allowHtml: true })
 }
+
+//task2
+const text = `SpaceX, the aerospace manufacturer and space transportation company founded by Elon Musk, has revolutionized the space industry with its innovative approach to rocket design and launch. With such a complex and ambitious mission, it’s natural to assume that SpaceX uses advanced software and technology to facilitate its operations. One such technology is Python, a high-level programming language that has become increasingly popular in recent years.
+
+Many companies, including SpaceX, have turned to Python for its simplicity, ease of use, and versatility. However, the question remains: does SpaceX actually use Python, and if so, how? In this article, we’ll explore the role that Python plays in SpaceX’s operations, from designing and testing rockets to monitoring and analyzing data during launches.
+SpaceX, founded by Elon Musk in 2002, is revolutionizing the aerospace industry with its innovative rockets and spacecraft. However, behind the scenes, the company uses cutting-edge software tools to design, test and launch its vehicles.
+
+Software Tools Used by SpaceX Engineers
+
+The software tools used by SpaceX engineers include:
+
+1. CAD Software
+
+Computer-Aided Design (CAD) software is used by SpaceX engineers to create 3D digital models of rockets and spacecraft. This software allows engineers to visualize and test designs before they are built. SpaceX uses a variety of CAD software, including Siemens NX and CATIA.
+
+2. Simulation Software
+
+Simulation software is used by SpaceX engineers to simulate the behavior of rockets and spacecraft in various conditions. This software allows engineers to test the performance of designs and identify potential problems before they occur. SpaceX uses a variety of simulation software, including ANSYS and LS-DYNA.
+
+3. Data Analysis Software
+
+Data analysis software is used by SpaceX engineers to analyze data collected during rocket launches and spacecraft missions. This software allows engineers to identify trends and patterns in the data, which can be used to improve future designs. SpaceX uses a variety of data analysis software, including MATLAB and Python.
+
+4. Project Management Software
+
+Project management software is used by SpaceX engineers to manage projects and collaborate with team members. This software allows engineers to track project progress, assign tasks, and communicate with team members. SpaceX uses a variety of project management software, including Asana and Trello.
+
+5. Version Control Software
+
+Version control software is used by SpaceX engineers to manage changes to software code and other documents. This software allows engineers to track changes, collaborate with team members, and ensure that everyone is working with the latest version of a document. SpaceX uses a variety of version control software, including Git and Subversion.
+
+The Importance of Software Tools in the Aerospace Industry
+
+Software tools have become increasingly important in the aerospace industry, as they allow engineers to design, test, and launch vehicles more efficiently and with greater precision. SpaceX’s use of cutting-edge software tools has helped the company achieve a number of milestones, including the first privately-funded spacecraft to reach orbit and the first privately-funded spacecraft to dock with the International Space Station.
+
+Conclusion
+
+SpaceX’s innovative rockets and spacecraft are changing the way we think about space travel. However, behind the scenes, the company’s engineers rely on a suite of cutting-edge software tools to design, test, and launch their vehicles. By leveraging the power of software, SpaceX is able to push the boundaries of what is possible in the aerospace industry.
+
+`
+
+//task 2.1
+google.charts.setOnLoadCallback(drawNodeChart2_1)
+function drawNodeChart2_1() {
+    var data = google.visualization.arrayToDataTable([["Phrases"], [text]])
+    var options = {
+        wordtree: {
+            format: "implicit",
+            type: "double",
+            word: "SpaceX",
+        },
+    }
+    var wordtree = new google.visualization.WordTree(document.getElementById("task2_1"))
+    wordtree.draw(data, options)
+}
+
+//task 2.2
+google.charts.setOnLoadCallback(drawNodeChart2_2)
+function drawNodeChart2_2() {
+    var data = google.visualization.arrayToDataTable([["Phrases"], [text]])
+    var options = {
+        wordtree: {
+            format: "implicit",
+            type: "double",
+            word: "Python",
+        },
+    }
+    var wordtree = new google.visualization.WordTree(document.getElementById("task2_2"))
+    wordtree.draw(data, options)
+}
