@@ -1,6 +1,7 @@
-google.charts.load("current", { packages: ["wordtree"] })
-google.charts.setOnLoadCallback(drawChart)
-function drawChart() {
+google.charts.load("current", { packages: ["wordtree", "orgchart"] })
+
+google.charts.setOnLoadCallback(drawChart1)
+function drawChart1() {
     var data = google.visualization.arrayToDataTable([
         ["Phrases"],
         ["cats are better than dogs"],
@@ -32,9 +33,8 @@ function drawChart() {
     chart.draw(data, options)
 }
 
-google.charts.load("current", { packages: ["wordtree"] })
-google.charts.setOnLoadCallback(drawChart)
-function drawChart() {
+google.charts.setOnLoadCallback(drawChart2)
+function drawChart2() {
     var data = google.visualization.arrayToDataTable([
         ["фрази"],
         ["коти кращі ніж хомяки"],
@@ -70,7 +70,6 @@ function drawChart() {
     chart.draw(data, options)
 }
 
-google.charts.load("current", { packages: ["wordtree"] })
 google.charts.setOnLoadCallback(drawSimpleNodeChart)
 function drawSimpleNodeChart() {
     var data = google.visualization.arrayToDataTable([
@@ -89,3 +88,5 @@ function drawSimpleNodeChart() {
     var wordtree = new google.visualization.WordTree(document.getElementById("wordtree_double"))
     wordtree.draw(data, options)
 }
+
+//task1
